@@ -1,12 +1,24 @@
 USER = greywidget
+IRIS_FILE = keebio_iris_rev2_$(USER)
+IRIS_PATH = iris/$(IRIS_FILE)
+$(eval CURRENT_TIME := $(shell date +'%Y%m%d_%H%M%S'))
+
+test:
+	$(eval CURRENT_TIME := $(shell date +'%Y%m%d_%H%M%S'))
+	@echo $(CURRENT_TIME)
 
 iris:
+	$(eval CURRENT_TIME := $(shell date +'%Y%m%d_%H%M%S'))
+	if [ -f $(IRIS_PATH).hex ]; then \
+		mv $(IRIS_PATH).hex $(IRIS_PATH)_$(CURRENT_TIME).hex; \
+	fi
+
 	rm -rf qmk_firmware/keyboards/keebio/iris/keymaps/$(USER)
 	ln -s /Users/kiwi/qmk-keymaps/iris qmk_firmware/keyboards/keebio/iris/keymaps/$(USER)
-	cd qmk_firmware
-	# make build_dir=$(shell pwd)/build -j 1 -C qmk_firmware keebio/iris/rev2:greywidget
-	qmk compile -kb keebio/iris/rev2 -km $(USER)
-	rm -rf qmk_firmware/keyboards/keebio/iris/keymaps/$(USER)
-	cd ..
 
-.PHONY: iris
+	qmk compile -kb keebio/iris/rev2 -km $(USER)
+	mv qmk_firmware/$(IRIS_FILE).hex iris/$(IRIS_FILE).hex
+
+	rm -rf qmk_firmware/keyboards/keebio/iris/keymaps/$(USER)
+
+.PHONY: iris test

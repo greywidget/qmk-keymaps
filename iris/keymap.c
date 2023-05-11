@@ -34,27 +34,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_COLEMAK_DH] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     UK_ESC,  UK_1,    UK_2,    UK_3,    UK_4,    UK_5,                               UK_6,    UK_7,    UK_8,    UK_9,    UK_0,    UK_BSPC,
+     CTL_ESC, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     UK_TAB,  UK_Q,    UK_W,    UK_F,    UK_P,    UK_B,                               UK_J,    UK_L,    UK_U,    UK_Y,    UK_SCLN, UK_BSPC,
+     KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                               KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     CTL_ESC, GUI_A,   ALT_R,   CTL_S,   SF_T,    UK_G,                               UK_M,    SFT_N,   CTL_E,   ALT_I,   GUI_O,   CTL_QUOT,
+     CTL_ESC, GUI_A,   ALT_R,   CTL_S,   SF_T,    KC_G,                               KC_M,    SFT_N,   CTL_E,   ALT_I,   GUI_O,   CTL_QUOT,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     UK_LSFT, UK_Z,    UK_X,    UK_C,    UK_D,    UK_V,    UK_LBRC,          UK_RBRC, UK_K,    UK_H,    UK_COMM, UK_DOT,  UK_SLSH, UK_RSFT,
+     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_LBRC,          KC_RBRC, KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    UK_LGUI, NAV,     UK_ENT,                    UK_SPC,  SYM,     UK_LALT
+                                    KC_LGUI, NAV,     KC_ENT,                    KC_SPC,  SYM,     KC_LALT
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
   [_SYM] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     RESET,   UK_EXLM, UK_AT,   UK_HASH, UK_DLR,  UK_PERC,                            UK_CIRC, UK_AMPR, UK_ASTR, UK_LPRN, UK_RPRN, UK_PGUP,
+     CTL_ESC, UK_EXLM, UK_AT,   UK_HASH, UK_DLR,  UK_PERC,                            UK_CIRC, UK_AMPR, UK_ASTR, UK_LPRN, UK_RPRN, KC_PGUP,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     UK_GRV,  UK_1,    UK_2,    UK_3,    UK_4,    UK_5,                               UK_6,    UK_7,    UK_8,    UK_9,    UK_0,    UK_EQL,
+     KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    UK_EQL,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      UK_TILD, UK_EXLM, UK_DQUO, UK_HASH, UK_DLR,  UK_PERC,                            UK_CIRC, UK_AMPR, UK_ASTR, UK_LPRN, UK_RPRN, UK_PLUS,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     UK_PIPE, UK_BSLS, UK_COLN, UK_SCLN, UK_MINS, UK_BSLS, UK_LBRC,          UK_RBRC, UK_HASH, UK_UNDS, UK_COMM, UK_DOT,  UK_SLSH, UK_QUES,
+     UK_PIPE, UK_BSLS, UK_COLN, KC_SCLN, UK_MINS, UK_BSLS, UK_LBRC,          UK_RBRC, UK_HASH, UK_UNDS, UK_COMM, UK_DOT,  UK_SLSH, UK_QUES,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     _______, _______, _______,                   _______, _______, _______
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
@@ -62,11 +62,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_NAV] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     UK_F12,  UK_F1,   UK_F2,   UK_F3,   UK_F4,   UK_F5,                              UK_F6,   UK_F7,   UK_F8,   UK_F9,   UK_F10,  UK_F11,
+     KC_F12,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                              KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, _______, _______, _______, UK_SLCK, KC_CAPS,                            UK_PGUP, UK_HOME, UK_UP,   UK_END,  KC_VOLU, UK_DEL,
+     _______, _______, _______, _______, KC_SCRL, KC_CAPS,                            KC_PGUP, KC_HOME, KC_UP,   KC_END,  KC_VOLU, KC_DEL,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, UK_LGUI, UK_LALT, UK_LCTL, UK_LSFT, _______,                            UK_PGDN, UK_LEFT, UK_DOWN, UK_RGHT, KC_VOLD, UK_INS,
+     _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                            KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_VOLD, KC_INS,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      _______, _______, _______, _______, _______, _______, _______,          _______, KC_PAUSE,KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_PSCR,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
