@@ -1,0 +1,18 @@
+htmlcov/
+venv**
+*pyc
+*swp
+**.DS_Store
+**egg-info**
+.coverage
+.vscode
+*.sqlite3
+
+# Environment File
+.env
+
+# qmk build output
+obj_*
+*.hex
+*.elf
+*.map
