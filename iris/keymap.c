@@ -1,6 +1,4 @@
 #include QMK_KEYBOARD_H
-#include "keymap_uk.h"
-
 
 #define _COLEMAK_DH 0
 #define _SYM 1
