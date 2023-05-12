@@ -3,12 +3,7 @@ IRIS_FILE = keebio_iris_rev2_$(USER)
 IRIS_PATH = iris/$(IRIS_FILE)
 $(eval CURRENT_TIME := $(shell date +'%Y%m%d_%H%M%S'))
 
-test:
-	$(eval CURRENT_TIME := $(shell date +'%Y%m%d_%H%M%S'))
-	@echo $(CURRENT_TIME)
-
 iris:
-	$(eval CURRENT_TIME := $(shell date +'%Y%m%d_%H%M%S'))
 	if [ -f $(IRIS_PATH).hex ]; then \
 		mv $(IRIS_PATH).hex $(IRIS_PATH)_$(CURRENT_TIME).hex; \
 	fi
@@ -21,4 +16,4 @@ iris:
 
 	rm -rf qmk_firmware/keyboards/keebio/iris/keymaps/$(USER)
 
-.PHONY: iris test
+.PHONY: iris
