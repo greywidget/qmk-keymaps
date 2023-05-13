@@ -1,8 +1,13 @@
 USER = greywidget
 IRIS_FILE = keebio_iris_rev2_$(USER)
 IRIS_PATH = iris/$(IRIS_FILE)
+
 ROMAC_FILE = kingly_keys_romac_$(USER)
 ROMAC_PATH = romac/$(ROMAC_FILE)
+
+KYRIA_REV1_FILE = splitkb_kyria_rev1_$(USER)
+KYRIA_REV1_PATH = kyria-1/$(KYRIA_REV1_FILE)
+
 $(eval CURRENT_TIME := $(shell date +'%Y%m%d_%H%M%S'))
 
 iris:
@@ -31,4 +36,17 @@ romac:
 
 	rm -rf qmk_firmware/keyboards/kingly_keys/romac/keymaps/$(USER)
 
-.PHONY: iris romac
+kyria-1:
+	if [ -f $(KYRIA_REV1_PATH).hex ]; then \
+		mv $(KYRIA_REV1_PATH).hex $(KYRIA_REV1_PATH)_$(CURRENT_TIME).hex; \
+	fi
+
+	rm -rf qmk_firmware/keyboards/splitkb/kyria/keymaps/$(USER)
+	ln -s /Users/kiwi/qmk-keymaps/kyria-1 qmk_firmware/keyboards/splitkb/kyria/keymaps/$(USER)
+
+	qmk compile -kb splitkb/kyria/rev1 -km $(USER)
+	mv qmk_firmware/$(KYRIA_REV1_FILE).hex kyria-1/$(KYRIA_REV1_FILE).hex
+
+	rm -rf qmk_firmware/keyboards/splitkb/kyria/keymaps/$(USER)
+
+.PHONY: iris kyria-1 romac

@@ -73,10 +73,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_QWERTY] = LAYOUT(
-     UK_TAB  , UK_Q ,  UK_W   ,  UK_E  ,   UK_R ,   UK_T ,                                        UK_Y,   UK_U ,  UK_I ,   UK_O ,  UK_P , UK_BSPC,
-     CTL_ESC , UK_A ,  UK_S   ,  UK_D  ,   UK_F ,   UK_G ,                                        UK_H,   UK_J ,  UK_K ,   UK_L ,  KC_SCLN,CTL_QUOT,
-     UK_LSFT , UK_Z ,  UK_X   ,  UK_C  ,   UK_V ,   UK_B , UK_LBRC,KC_CAPS,     KC_APP , UK_RBRC, UK_N,   UK_M ,UK_COMM, UK_DOT ,UK_SLSH, UK_RSFT,
-                                ADJUST ,     SYM,   NAV  , UK_ENT,  FKEYS,      FKEYS  , UK_SPC , SYM,    NAV  ,UK_RALT
+     KC_TAB  , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P , KC_BSPC,
+     CTL_ESC , KC_A ,  KC_S   ,  KC_D  ,   KC_F ,   KC_G ,                                        KC_H,   KC_J ,  KC_K ,   KC_L ,  KC_SCLN,CTL_QUOT,
+     KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , KC_LBRC,KC_CAPS,     KC_APP , KC_RBRC, KC_N,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
+                                ADJUST ,     SYM,   NAV  , KC_ENT,  FKEYS,      FKEYS  , KC_SPC , SYM,    NAV  ,KC_RALT
     ),
 
 /*
@@ -94,10 +94,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_DVORAK] = LAYOUT(
-     UK_TAB  ,UK_QUOT ,UK_COMM,  UK_DOT,   UK_P ,   UK_Y ,                                        UK_F,   UK_G ,  UK_C ,   UK_R ,  UK_L , UK_BSPC,
-     CTL_ESC , UK_A ,  UK_O   ,  UK_E  ,   UK_U ,   UK_I ,                                        UK_D,   UK_H ,  UK_T ,   UK_N ,  UK_S , CTL_MINS,    
-     UK_LSFT ,UK_SCLN, UK_Q   ,  UK_J  ,   UK_K ,   UK_X , UK_LBRC,KC_CAPS,     KC_APP , UK_RBRC, UK_B,   UK_M ,  UK_W ,   UK_V ,  UK_Z , UK_RSFT,
-                                 ADJUST, UK_LGUI, ALT_ENT, UK_SPC , NAV   ,     SYM    , UK_SPC ,UK_RALT, UK_RGUI, FKEYS
+     KC_TAB  ,KC_QUOT ,KC_COMM,  KC_DOT,   KC_P ,   KC_Y ,                                        KC_F,   KC_G ,  KC_C ,   KC_R ,  KC_L , KC_BSPC,
+     CTL_ESC , KC_A ,  KC_O   ,  KC_E  ,   KC_U ,   KC_I ,                                        KC_D,   KC_H ,  KC_T ,   KC_N ,  KC_S , CTL_MINS,    
+     KC_LSFT ,KC_SCLN, KC_Q   ,  KC_J  ,   KC_K ,   KC_X , KC_LBRC,KC_CAPS,     KC_APP , KC_RBRC, KC_B,   KC_M ,  KC_W ,   KC_V ,  KC_Z , KC_RSFT,
+                                 ADJUST, KC_LGUI, ALT_ENT, KC_SPC , NAV   ,     SYM    , KC_SPC ,KC_RALT, KC_RGUI, FKEYS
     ),
 
 /*
@@ -119,19 +119,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  // COLEMAK_DH Step 2b [(J)>B>T>F] Skipping 2a as I have a Matrix Keyboard, though I'll probably do 2a on MacBook.
  // COLEMAK_DH Step 3 [(J)>R>S>D]
     [_COLEMAK_DH] = LAYOUT(
-     UK_TAB  , UK_Q ,  UK_W   ,  UK_F  ,   UK_P ,   UK_B ,                                        UK_J,   UK_L ,  UK_U   , UK_Y  , UK_SCLN , UK_BSPC,
-     CTL_ESC , GUI_A,  ALT_R  ,  CTL_S ,   SF_T,    UK_G ,                                        UK_M,   SFT_N,  CTL_E  , ALT_I , GUI_O   , CTL_QUOT,
-     UK_LSFT , UK_Z ,  UK_X   ,  UK_C  ,   UK_D ,   UK_V , UK_LBRC,KC_CAPS,     KC_APP , UK_RBRC, UK_K,   UK_H ,  UK_COMM, UK_DOT, UK_SLSH , UK_RSFT,
-                                ADJUST ,     SYM,   NAV  , UK_ENT,  FKEYS,      FKEYS  , UK_SPC , SYM ,   NAV  ,  UK_RALT
+     KC_TAB  , KC_Q ,  KC_W   ,  KC_F  ,   KC_P ,   KC_B ,                                        KC_J,   KC_L ,  KC_U   , KC_Y  , KC_SCLN , KC_BSPC,
+     CTL_ESC , GUI_A,  ALT_R  ,  CTL_S ,   SF_T,    KC_G ,                                        KC_M,   SFT_N,  CTL_E  , ALT_I , GUI_O   , CTL_QUOT,
+     KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_D ,   KC_V , KC_LBRC,KC_CAPS,     KC_APP , KC_RBRC, KC_K,   KC_H ,  KC_COMM, KC_DOT, KC_SLSH , KC_RSFT,
+                                ADJUST ,     SYM,   NAV  , KC_ENT,  FKEYS,      FKEYS  , KC_SPC , SYM ,   NAV  ,  KC_RALT
     ),
- /*
- *   [_COLEMAK_DH] = LAYOUT(
- *    UK_TAB  , UK_Q ,  UK_W   ,  UK_F  ,   UK_J ,   UK_B ,                                        UK_J,   UK_L ,  UK_U ,   UK_Y ,UK_SCLN, UK_BSPC,
- *    CTL_ESC , UK_A ,  UK_R   ,  UK_S  ,   UK_T ,   UK_G ,                                        UK_M,   UK_N ,  UK_E ,   UK_I ,  UK_O , CTL_QUOT,
- *    UK_LSFT , UK_Z ,  UK_X   ,  UK_C  ,   UK_D ,   UK_V , UK_LBRC,KC_CAPS,     KC_APP , UK_RBRC, UK_K,   UK_H ,UK_COMM, UK_DOT ,UK_SLSH, UK_RSFT,
- *                                ADJUST, UK_LGUI, ALT_ENT, UK_SPC , NAV   ,     SYM    , UK_SPC ,UK_RALT, UK_RGUI, FKEYS
- *   ),
-*/
+
 
 /*
  * Sym Layer: Symbols
@@ -148,9 +141,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_SYM] = LAYOUT(
-     UK_GRV,   UK_1,    UK_2 ,   UK_3 ,   UK_4 ,   UK_5 ,                                       UK_6 ,   UK_7 ,   UK_8 ,   UK_9 ,   UK_0 ,   UK_EQL ,
-     UK_TILD,  UK_EXLM, UK_DQUO, UK_HASH, UK_DLR,  UK_PERC,                                     UK_CIRC, UK_AMPR, UK_ASTR, UK_LPRN, UK_RPRN, UK_PLUS,
-     UK_PIPE,  UK_BSLS, UK_COLN, UK_SCLN, UK_MINS, UK_BSLS, UK_LBRC, _______, _______, UK_RBRC, UK_HASH, UK_UNDS, UK_COMM, UK_DOT,  UK_SLSH, UK_QUES,
+     KC_GRV,   KC_1,    KC_2 ,   KC_3 ,   KC_4 ,   KC_5 ,                                       KC_6 ,   KC_7 ,   KC_8 ,   KC_9 ,   KC_0 ,   KC_EQL ,
+     KC_TILD,  KC_EXLM, KC_DQUO, KC_HASH, KC_DLR,  KC_PERC,                                     KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PLUS,
+     KC_PIPE,  KC_BSLS, KC_COLN, KC_SCLN, KC_MINS, KC_BSLS, KC_LBRC, _______, _______, KC_RBRC, KC_HASH, KC_UNDS, KC_COMM, KC_DOT,  KC_SLSH, KC_QUES,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
@@ -169,9 +162,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_NAV] = LAYOUT(
-      _______, _______, _______, _______, _______, _______,                                     UK_PGUP, UK_HOME, UK_UP,   UK_END,  KC_VOLU, UK_DEL,
-      _______, UK_LGUI, UK_LALT, UK_LCTL, UK_LSFT, _______,                                     UK_PGDN, UK_LEFT, UK_DOWN, UK_RGHT, KC_VOLD, UK_INS,
-      _______, _______, _______, _______, _______, _______, _______, UK_SLCK, _______, _______,KC_PAUSE, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_PSCR,
+      _______, _______, _______, _______, _______, _______,                                     KC_PGUP, KC_HOME, KC_UP,   KC_END,  KC_VOLU, KC_DEL,
+      _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                                     KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_VOLD, KC_INS,
+      _______, _______, _______, _______, _______, _______, _______, KC_SCRL, _______, _______,KC_PAUSE, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_PSCR,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
@@ -190,9 +183,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_FUNCTION] = LAYOUT(
-      _______,  UK_F9 ,  UK_F10,  UK_F11,  UK_F12, _______,                                     _______, _______, _______, _______, _______, _______,
-      _______,  UK_F5 ,  UK_F6 ,  UK_F7 ,  UK_F8 , _______,                                     _______, UK_RSFT, UK_RCTL, UK_LALT, UK_RGUI, _______,
-      _______,  UK_F1 ,  UK_F2 ,  UK_F3 ,  UK_F4 , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+      _______,  KC_F9 ,  KC_F10,  KC_F11,  KC_F12, _______,                                     _______, _______, _______, _______, _______, _______,
+      _______,  KC_F5 ,  KC_F6 ,  KC_F7 ,  KC_F8 , _______,                                     _______, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, _______,
+      _______,  KC_F1 ,  KC_F2 ,  KC_F3 ,  KC_F4 , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
@@ -317,7 +310,7 @@ void oled_task_user(void) {
 #endif
 
 #ifdef ENCODER_ENABLE
-void encoder_update_user(uint8_t index, bool clockwise) {
+bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 1) {
         // Volume control
         if (clockwise) {
@@ -329,11 +322,12 @@ void encoder_update_user(uint8_t index, bool clockwise) {
     else if (index == 0) {
         // Page up/Page down
         if (clockwise) {
-            tap_code(UK_PGDN);
+            tap_code(KC_PGDN);
         } else {
-            tap_code(UK_PGUP);
+            tap_code(KC_PGUP);
         }
     }
+    return false;
 }
 #endif
 
