@@ -18,7 +18,7 @@ iris:
 	rm -rf qmk_firmware/keyboards/keebio/iris/keymaps/$(USER)
 	ln -s /Users/kiwi/qmk-keymaps/iris qmk_firmware/keyboards/keebio/iris/keymaps/$(USER)
 
-	qmk compile -kb keebio/iris/rev2 -km $(USER)
+	qmk compile -kb keebio/iris/rev2
 	mv qmk_firmware/$(IRIS_FILE).hex iris/$(IRIS_FILE).hex
 
 	rm -rf qmk_firmware/keyboards/keebio/iris/keymaps/$(USER)
@@ -31,7 +31,7 @@ romac:
 	rm -rf qmk_firmware/keyboards/kingly_keys/romac/keymaps/$(USER)
 	ln -s /Users/kiwi/qmk-keymaps/romac qmk_firmware/keyboards/kingly_keys/romac/keymaps/$(USER)
 
-	qmk compile -kb kingly_keys/romac -km $(USER)
+	qmk compile -kb kingly_keys/romac
 	mv qmk_firmware/$(ROMAC_FILE).hex romac/$(ROMAC_FILE).hex
 
 	rm -rf qmk_firmware/keyboards/kingly_keys/romac/keymaps/$(USER)
@@ -44,7 +44,8 @@ kyria-1:
 	rm -rf qmk_firmware/keyboards/splitkb/kyria/keymaps/$(USER)
 	ln -s /Users/kiwi/qmk-keymaps/kyria-1 qmk_firmware/keyboards/splitkb/kyria/keymaps/$(USER)
 
-	qmk compile -kb splitkb/kyria/rev1 -km $(USER)
+	# qmk compile -e CONVERT_TO=promicro_rp2040 -kb splitkb/kyria/rev1 -km $(USER)
+	qmk compile -kb splitkb/kyria/rev1
 	mv qmk_firmware/$(KYRIA_REV1_FILE).hex kyria-1/$(KYRIA_REV1_FILE).hex
 
 	rm -rf qmk_firmware/keyboards/splitkb/kyria/keymaps/$(USER)
