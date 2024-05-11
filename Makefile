@@ -8,6 +8,9 @@ ROMAC_PATH = romac/$(ROMAC_FILE)
 KYRIA_REV1_FILE = splitkb_kyria_rev1_$(USER)
 KYRIA_REV1_PATH = kyria-1/$(KYRIA_REV1_FILE)
 
+KYRIA_REV3_FILE = splitkb_kyria_rev3_$(USER)
+KYRIA_REV3_PATH = kyria-3/$(KYRIA_REV3_FILE)
+
 $(eval CURRENT_TIME := $(shell date +'%Y%m%d_%H%M%S'))
 
 iris:
@@ -50,4 +53,18 @@ kyria-1:
 
 	rm -rf qmk_firmware/keyboards/splitkb/kyria/keymaps/$(USER)
 
-.PHONY: iris kyria-1 romac
+kyria-3:
+	if [ -f $(KYRIA_REV3_PATH).hex ]; then \
+		mv $(KYRIA_REV3_PATH).hex $(KYRIA_REV3_PATH)_$(CURRENT_TIME).hex; \
+	fi
+
+	rm -rf qmk_firmware/keyboards/splitkb/kyria/keymaps/$(USER)
+	ln -s /Users/kiwi/qmk-keymaps/kyria-3 qmk_firmware/keyboards/splitkb/kyria/keymaps/$(USER)
+
+	qmk compile -e CONVERT_TO=promicro_rp2040 -kb splitkb/kyria/rev3 -km $(USER)
+	# qmk compile -kb splitkb/kyria/rev1
+	mv qmk_firmware/$(KYRIA_REV3_FILE).hex kyria-3/$(KYRIA_REV3_FILE).hex
+
+	rm -rf qmk_firmware/keyboards/splitkb/kyria/keymaps/$(USER)
+
+.PHONY: iris kyria-1 kyria-3 romac
